@@ -1,11 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import Item from "../Item/Item";
 import Catagory from "../Catagory/Catagory";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Home = () => {
 
+    const {setUserPhoto,selectedUser}=useContext(AuthContext)
+
     const items=useLoaderData()
+
+    setUserPhoto(selectedUser?.photoUrl)
     
 
 

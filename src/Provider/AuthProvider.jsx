@@ -11,6 +11,8 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading]=useState(true)
     const [email,setEmail]=useState(null)
     const [subcatagory, setSubcatagory]=useState(null)
+    const [userPhoto, setUserPhoto]=useState(null)
+    const [selectedUser, SetSelectedUser]=useState(null)
 
     const createUser=(email,password)=>{
 
@@ -52,7 +54,10 @@ const AuthProvider = ({children}) => {
                     setEmail,
                     logOut,
                     subcatagory,
-                    setSubcatagory
+                    setSubcatagory,
+                    userPhoto, 
+                    setUserPhoto,
+                    SetSelectedUser
 
                    }
 

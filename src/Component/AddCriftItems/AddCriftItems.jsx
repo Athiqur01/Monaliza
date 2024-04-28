@@ -79,7 +79,9 @@ const AddCriftItems = () => {
                 <div className="label">
                  <span className="label-text text-base font-bold">Subcatagory Name</span>
                 </div>
-                <input type="text" name='subcatagory' placeholder="Subcatagory Name" className="input input-bordered w-full max-w-xs" />
+
+                <input type="text" name='subcatagory' placeholder="Subcatagory" className="input input-bordered w-full max-w-2xl" />
+                
                </label>
 
                <label className="form-control w-full max-w-xs">
@@ -114,7 +116,7 @@ const AddCriftItems = () => {
                 <div className="label">
                  <span className="label-text text-base font-bold">Customization</span>
                 </div>
-                <input type="text" name='customization' placeholder="Customization?" className="input input-bordered w-full max-w-xs" />
+                <input type="text" name='customization' placeholder="Customization" className="input input-bordered w-full max-w-2xl" />
                </label>
 
                <label className="form-control w-full max-w-xs">

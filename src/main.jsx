@@ -54,7 +54,8 @@ const router = createBrowserRouter([
       },
       {
         path:"/logIn",
-        element:<LogIn></LogIn>
+        element:<LogIn></LogIn>,
+        loader:()=> fetch('http://localhost:5018/user') 
       },
       {
         path:"/subcatagory",
