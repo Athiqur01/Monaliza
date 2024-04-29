@@ -3,7 +3,7 @@ import { FaFacebook,FaLinkedin,FaTwitter } from "react-icons/fa";
 const Footer = () => {
     return (
         <div className="   ">
-        <footer className="footer text-black  px-10 mx-auto bg-[#90c9ce] text-base-content pt-20 flex flex-col md:flex-row ">
+        <footer className="footer text-black  px-10 mx-auto bg-[#7eb6bb] text-base-content pt-20 flex flex-col md:flex-row ">
   <nav className="text-white mx-auto text-black">
     <h6 className="footer-title text-black">Monaliza</h6> 
     <p className="text-left text-black">Explore the mystique of the <br /> MonaLiza at our gallery, where <br />every detail invites fascination <br /> and interpretation.</p>
@@ -28,7 +28,7 @@ const Footer = () => {
   
   
 </footer>
-  <div className="bg-[#90c9ce] text-center ">
+  <div className="bg-[#7eb6bb] text-center ">
     <p className="text-black p-20">© 2018 Qode Interactive, All Rights Reserved</p>
   </div>
         </div>

@@ -13,7 +13,7 @@ const LogIn = () => {
     const userInfo=useLoaderData()
     const selectedUser=userInfo.find(info=>info.email===email)
     
-    setUserPhoto(selectedUser?.photoUrl)
+    
     SetSelectedUser(selectedUser)
      
     
@@ -21,6 +21,7 @@ const LogIn = () => {
 
     const handleLogin=e=>{
         e.preventDefault()
+        setUserPhoto(selectedUser?.photoUrl)
         
         
         
