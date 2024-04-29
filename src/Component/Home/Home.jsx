@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Item from "../Item/Item";
 import Catagory from "../Catagory/Catagory";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Carosal from "../Carosal/Carosal";
 
@@ -16,11 +16,15 @@ const Home = () => {
     const items=useLoaderData()
 
     setUserPhoto(selectedUser?.photoUrl)
+
+
+    
+    
     
 
 
     return (
-        <div className="   pb-10" >
+        <div  className="   pb-10" >
             <div>
                 <Carosal></Carosal>
             </div>

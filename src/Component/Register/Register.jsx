@@ -7,16 +7,19 @@ import Swal from 'sweetalert2'
 
 
 const Register = () => {
-    const {createUser,setUserPhoto}=useContext(AuthContext)
+    const {createUser,setUserPhoto,selectedUser, setUser,logOut}=useContext(AuthContext)
 
     const handleRegister=e=>{
         e.preventDefault()
+
         const name=e.target.name.value 
         const photoUrl=e.target.photo.value 
         const email=e.target.email.value 
         const password=e.target.password.value 
         console.log(name,email,photoUrl,password)
         const userInfo={email,photoUrl,password,name}
+
+        // setUserPhoto(photoUrl)
 
         if(password.length<6){
           return  Swal.fire({
@@ -47,7 +50,7 @@ const Register = () => {
         }
 
 
-        setUserPhoto(null)
+        
 
         createUser(email,password)
         .then(result=>{
@@ -64,19 +67,28 @@ const Register = () => {
             .then(res=>res.json())
             .then(result=>{
                 Swal.fire({
-                    icon: "error",
-                    title: "Register failed",
-                    text: "Something went wrong!",
+                    icon: "success",
+                    title: "Registration successful",
+                    text: "Login now!",
                     footer: '<a href="#">Please try again</a>'
                   });
             })
         })
-        .catch(error=>console.error(error))
+        .catch(error=>{
+
+            
+            Swal.fire({
+                icon: "error",
+                title: "Register failed",
+                text: "Something went wrong!",
+                footer: '<a href="#">Please try again</a>'
+              });
+        })
         
 
     }
-
-
+    logOut()
+     
 
     return (
         <div >

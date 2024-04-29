@@ -73,7 +73,7 @@ const MyArtAndCraftList = () => {
 
     return (
 
-          <div className='mt-16 bg-[#fff7f7] rounded-md p-12'>
+          <div className=' bg-[#fff7f7] rounded-md px-12 py-20'>
 
 <div>
       

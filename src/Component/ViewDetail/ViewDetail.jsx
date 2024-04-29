@@ -5,7 +5,7 @@ const ViewDetail = () => {
     const item=useLoaderData()
     const {_id,itemName,imageUrl,subcatagory,itemDescription,price,rating,customization,processingTime,stockStatus,email,userName}=item
     return (
-        <div className="p-4 md:p-16 lg:p-28 bg-red-50 mt-16 rounded-md">
+        <div className="p-4 md:p-16 lg:p-28 bg-red-50  rounded-md">
          <div className="card w-full  bg-base-100 shadow-xl">
            <figure><img src={imageUrl} alt="Shoes " className="w-full " /></figure>
          <div className="card-body text-justify">

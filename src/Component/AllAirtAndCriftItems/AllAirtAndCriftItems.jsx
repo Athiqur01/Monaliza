@@ -9,11 +9,12 @@ const AllAirtAndCriftItems = () => {
 
 
     return (
-        <div className='bg-[#fff7f7] mt-14 rounded-md'>
+        <div className='bg-[#fff7f7] pt-14 rounded-md'>
 
 
 
-
+<h2 className='text-4xl font-bold'>List of all Art and Craft Items</h2>
+<hr className='mx-20 mt-6' />
 <div className="overflow-x-auto p-10">
   <table className="table">
     {/* head */}

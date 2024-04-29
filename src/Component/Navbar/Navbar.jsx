@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
-import "@theme-toggles/react/css/[toggle name].css"
+import { Toggle } from 'rsuite';
+
+
 
 const Navbar = () => {
 
-    const {logInUser, user, setUser,email,setEmail,userPhoto,logOut}=useContext(AuthContext)
+    const {logInUser, user, setUser,email,setEmail,userPhoto,logOut,toggleTheam}=useContext(AuthContext)
 
     
 
@@ -28,6 +30,14 @@ const Navbar = () => {
                     
         
                  </>
+
+const userImg=localStorage.getItem('userPhoto');
+const userNameFor=localStorage.getItem('userName');
+console.log(userImg,userNameFor)
+
+
+
+
     return (
         <div>
               <div className="navbar bg-[#7eb6bb] rounded-t-lg p-4">
@@ -57,10 +67,10 @@ const Navbar = () => {
   </div>
   <div className="navbar-end font-bold">
     {
-        user? <> <button className='btn btn-circle border-none'><img className='w-full h-full rounded-full' src={userPhoto} alt="" /></button> <button className='ml-4' onClick={handleLogout}>LogOut</button> </> : <><Link to="/logIn"><button>LogIn</button></Link> <Link to="/register"> <button className='ml-4'>Register</button></Link> </> 
+        user? <> <button className='btn btn-circle border-none tooltip'  data-tip={userNameFor}><img className='w-full h-full rounded-full' src={userImg} alt="" /></button> <button className='ml-4' onClick={handleLogout}>LogOut</button> </> : <><Link to="/logIn"><button>LogIn</button></Link> <Link to="/register"> <button className='ml-4'>Register</button></Link> </> 
     }
     
-    
+    <button onClick={toggleTheam} className='btn btn-circle bg-slate-400'>Light</button>
     
   </div>
 </div>

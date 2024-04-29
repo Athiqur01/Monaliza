@@ -53,7 +53,7 @@ const AddCriftItems = () => {
 
 
     return (
-        <div className='flex flex-col justify-center items-center mt-10 rounded-lg bg-[#fff7f7] p-20' >
+        <div className='flex flex-col justify-center items-center  rounded-lg bg-[#fff7f7] p-20' >
             <div className='bg-[#f4e8e8] rounded-lg px-10 py-6'>
                 <form onSubmit={handleForm} >
                        {/* inpt first row */}

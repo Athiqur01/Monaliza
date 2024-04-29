@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../../Firebase/Firebase.config";
 
 const auth=getAuth(app)
@@ -11,8 +11,42 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading]=useState(true)
     const [email,setEmail]=useState(null)
     const [subcatagory, setSubcatagory]=useState(null)
-    const [userPhoto, setUserPhoto]=useState(null)
+    const [userPhoto, setUserPhoto]=useState(()=>localStorage.getItem('userPhoto'))
+    // const [userPhoto, setUserPhoto]=useState(null)
     const [selectedUser, SetSelectedUser]=useState(null)
+    const [theam, setTheam]=useState( () => localStorage.getItem('theam') === 'true')
+    const [userForNavbar, setUserForNavbar]=useState(null)
+
+    const googleProvider= new GoogleAuthProvider()
+
+    console.log(userForNavbar)
+    console.log(theam)
+    if(userForNavbar){
+        localStorage.setItem('userPhoto',userForNavbar.photoUrl );
+        localStorage.setItem('userName',userForNavbar.name);
+
+    }
+
+
+    // useEffect(() => {
+    //     if(userPhoto){
+    //         localStorage.setItem('userPhoto',userPhoto );
+    //     }
+        
+    //   }, [userPhoto]);
+
+    useEffect(() => {
+        localStorage.setItem('theam', theam);
+      }, [theam]);
+    
+      const toggleTheam = () => {
+        // Toggle the theme
+        setTheam( !theam);
+      };
+
+
+
+    
 
     const createUser=(email,password)=>{
 
@@ -27,10 +61,17 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword (auth,email,password)
     }
 
+    const createGoogleUser=()=>{
+        setLoading(true)
+
+      return  signInWithPopup(auth,googleProvider)
+    }
+
     useEffect(()=>{
         const unSubscribe= onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser)
             setEmail(currentUser.email)
+            setTheam(theam) 
             setUserPhoto(selectedUser?.photoUrl)
             console.log('current user',currentUser)
         })
@@ -58,7 +99,9 @@ const AuthProvider = ({children}) => {
                     setSubcatagory,
                     userPhoto, 
                     setUserPhoto,
-                    SetSelectedUser
+                    SetSelectedUser,
+                    toggleTheam,
+                    theam,userForNavbar, setUserForNavbar,createGoogleUser
 
                    }
 
