@@ -78,6 +78,7 @@ const LogIn = () => {
                     text: 'Login operation successfully done',
                     icon: 'success',
                     confirmButtonText: 'Close'
+                    
                   })
                   
             }

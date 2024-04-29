@@ -63,7 +63,8 @@ const router = createBrowserRouter([
         path:"/subcatagory",
         element:<Subcatagory></Subcatagory>,
         loader:()=> fetch('http://localhost:5018/items') 
-      }
+      },
+      
       
     ]
   },

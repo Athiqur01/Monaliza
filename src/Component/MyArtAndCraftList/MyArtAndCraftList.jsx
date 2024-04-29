@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom';
 
 const MyArtAndCraftList = () => {
 
-    const {email}=useContext(AuthContext)
+    const {email,setLoading}=useContext(AuthContext)
 
     const items=useLoaderData()
 
@@ -110,8 +111,9 @@ const MyArtAndCraftList = () => {
                         <p className="opacity-85"> <span className="font-bold">Stock Status:</span> {item.stockStatus}</p>
 
                         <div className="card-actions flex justify-between">
-                         <button className="btn  bg-[#90c9ce]">Update</button>
-                         <button onClick={()=>handleDelete(item._id)} className="btn  bg-[#fbec9f]">Delete</button>
+                            <Link to="/update"><button className="btn  bg-[#90c9ce]">Update</button></Link>
+                         <Link to="/MyArtAndCraftList"><button onClick={()=>handleDelete(item._id)} className="btn  bg-[#fbec9f]">Delete</button></Link>
+                         
 
                         </div>
                         </div>
