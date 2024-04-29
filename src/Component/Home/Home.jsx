@@ -10,10 +10,12 @@ import Carosal from "../Carosal/Carosal";
 
 
 const Home = () => {
-
-    const {setUserPhoto,selectedUser}=useContext(AuthContext)
-
+    
+    
+    const {setUserPhoto,selectedUser,setLoading,loading}=useContext(AuthContext)
+    setLoading(true)
     const items=useLoaderData()
+    setLoading(false)
 
     setUserPhoto(selectedUser?.photoUrl)
 
@@ -25,6 +27,9 @@ const Home = () => {
 
     return (
         <div  className="   pb-10" >
+            <div>
+                {loading && <span className="loading loading-spinner loading-lg"></span>}
+            </div>
             <div>
                 <Carosal></Carosal>
             </div>
