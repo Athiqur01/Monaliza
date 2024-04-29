@@ -27,9 +27,7 @@ const Home = () => {
 
     return (
         <div  className="   pb-10" >
-            <div>
-                {loading && <span className="loading loading-spinner loading-lg"></span>}
-            </div>
+            
             <div>
                 <Carosal></Carosal>
             </div>

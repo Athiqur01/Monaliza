@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Toggle } from 'rsuite';
-
+import { Tooltip } from 'react-tooltip'
 
 
 const Navbar = () => {
@@ -67,7 +67,11 @@ console.log(userImg,userNameFor)
   </div>
   <div className="navbar-end font-bold">
     {
-        user? <> <button className='btn btn-circle border-none tooltip'  data-tip={userNameFor}><img className='w-full h-full rounded-full' src={userImg} alt="" /></button> <button className='ml-4' onClick={handleLogout}>LogOut</button> </> : <><Link to="/logIn"><button>LogIn</button></Link> <Link to="/register"> <button className='ml-4'>Register</button></Link> </> 
+        user? <> <Tooltip anchorSelect=".my-anchor-element" place="top">
+        
+        <button className='btn btn-circle border-none tooltip'  data-tip={userNameFor}><img className='w-full h-full rounded-full' src={userImg} alt="" /></button>
+
+      </Tooltip>   <button className='ml-4' onClick={handleLogout}>LogOut</button> </> : <><Link to="/logIn"><button>LogIn</button></Link> <Link to="/register"> <button className='ml-4'>Register</button></Link> </> 
     }
     
     <button onClick={toggleTheam} className='btn btn-circle bg-slate-400'>Light</button>
