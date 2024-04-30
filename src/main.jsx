@@ -18,6 +18,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
 import Subcatagory from './Component/Subcatagory/Subcatagory.jsx';
 import ErrorPage from './Component/ErrorPage/ErrorPage.jsx';
+import Update from './Component/Update/Update.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -64,6 +65,12 @@ const router = createBrowserRouter([
         element:<Subcatagory></Subcatagory>,
         loader:()=> fetch('http://localhost:5018/items') 
       },
+
+      {
+        path:"/update/:id",
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:5018/items/${params.id}`)
+      }
       
       
     ]

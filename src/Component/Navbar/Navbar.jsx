@@ -8,7 +8,7 @@ import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
 
-    const {logInUser, user, setUser,email,setEmail,userPhoto,logOut,toggleTheam}=useContext(AuthContext)
+    const {logInUser, user, setUser,email,setEmail,userPhoto,logOut,toggleTheam,updateId}=useContext(AuthContext)
 
     
 
@@ -75,7 +75,12 @@ console.log(userImg,userNameFor)
     }
     
     <button onClick={toggleTheam} className='btn btn-circle bg-slate-400'>Light</button>
-    
+    <div className="form-control">
+  <label className="label cursor-pointer">
+    <span className="label-text">Remember me</span> 
+    <input type="checkbox" className="toggle" checked />
+  </label>
+</div>
   </div>
 </div>
             

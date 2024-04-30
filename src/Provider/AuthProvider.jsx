@@ -16,11 +16,12 @@ const AuthProvider = ({children}) => {
     const [selectedUser, SetSelectedUser]=useState(null)
     const [theam, setTheam]=useState( () => localStorage.getItem('theam') === 'true')
     const [userForNavbar, setUserForNavbar]=useState(null)
+    const [updateId, setUpdateId]=useState(null)
 
     const googleProvider= new GoogleAuthProvider()
 
     console.log(userForNavbar)
-    console.log(theam)
+    
     if(userForNavbar){
         localStorage.setItem('userPhoto',userForNavbar.photoUrl );
         localStorage.setItem('userName',userForNavbar.name);
@@ -42,6 +43,14 @@ const AuthProvider = ({children}) => {
       const toggleTheam = () => {
         // Toggle the theme
         setTheam( !theam);
+        if(theam){
+            console.log('theam is true',theam)
+            document.querySelector('html').setAttribute('data-theme','synthwave')
+        }
+        else{
+            console.log('theam is false',theam)
+            document.querySelector('html').setAttribute('data-theme','light')
+        }
       };
 
 
@@ -101,7 +110,7 @@ const AuthProvider = ({children}) => {
                     setUserPhoto,
                     SetSelectedUser,
                     toggleTheam,
-                    theam,userForNavbar, setUserForNavbar,createGoogleUser
+                    theam,userForNavbar, setUserForNavbar,createGoogleUser,updateId, setUpdateId
 
                    }
 

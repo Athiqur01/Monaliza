@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const MyArtAndCraftList = () => {
 
-    const {email,setLoading}=useContext(AuthContext)
+    const {email,setLoading,updateId}=useContext(AuthContext)
 
     const items=useLoaderData()
 
@@ -111,7 +111,7 @@ const MyArtAndCraftList = () => {
                         <p className="opacity-85"> <span className="font-bold">Stock Status:</span> {item.stockStatus}</p>
 
                         <div className="card-actions flex justify-between">
-                            <Link to="/update"><button className="btn  bg-[#90c9ce]">Update</button></Link>
+                            <Link to={`/update/${item._id}`}><button className="btn  bg-[#90c9ce]">Update</button></Link>
                          <Link to="/MyArtAndCraftList"><button onClick={()=>handleDelete(item._id)} className="btn  bg-[#fbec9f]">Delete</button></Link>
                          
 
