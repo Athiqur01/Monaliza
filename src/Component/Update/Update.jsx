@@ -32,7 +32,7 @@ const Update = () => {
         // const email=common.email.value;
         const userName=common.user.value;
 
-        const newItems={itemName,imageUrl,subcatagory,itemDescription,price,rating,customization,processingTime,stockStatus,email,userName}
+        const newItems={_id,itemName,imageUrl,subcatagory,itemDescription,price,rating,customization,processingTime,stockStatus,email,userName}
         console.log(newItems)
 
 
@@ -46,7 +46,7 @@ const Update = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
-            if(data.insertedId){
+            if(data.modifiedCount>0){
                 Swal.fire({
                     title: 'Successful!',
                     text: 'Data has been Updated successfully',
@@ -67,7 +67,7 @@ const Update = () => {
     return (
         <div className='flex flex-col justify-center items-center  rounded-lg bg-[#fff7f7] p-20' >
         <div className='bg-[#f4e8e8] rounded-lg px-10 py-6'>
-            <form  >
+            <form onSubmit={handleUpdate} >
                    {/* inpt first row */}
          <div className=' p-4 flex space-x-8 justify-center'>
            <label className="form-control w-full max-w-xs">

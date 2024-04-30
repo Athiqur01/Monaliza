@@ -14,7 +14,7 @@ const Catagory = () => {
 
     return (
         <div className="border-t-2 rounded-3xl border-red-100 pt-6 pb-16 bg-[#fff7f7] px-10 mt-10">
-            <h1 className="text-6xl font-bold py-6 ">Arts and Craft Catagory</h1>
+            <h1 className="text-3xl  lg:text-6xl font-bold py-6 ">Arts and Craft Catagory</h1>
         <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-4  ">
 
 
