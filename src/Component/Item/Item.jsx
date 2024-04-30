@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+
 const Item = ({item}) => {
 
     const {_id,itemName,imageUrl,subcatagory,itemDescription,price,rating,customization,processingTime,stockStatus,email,userName}=item
@@ -21,7 +22,9 @@ const Item = ({item}) => {
            </Link>
            </div>
           </div>
+         
         </div>
+        
      </div>
     );
 };

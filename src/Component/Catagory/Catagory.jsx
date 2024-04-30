@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 
 const Catagory = () => {
@@ -11,10 +12,30 @@ const Catagory = () => {
         console.log(subcatagoryName)
         setSubcatagory(subcatagoryName)
     }
+    
 
     return (
         <div className="border-t-2 rounded-3xl border-red-100 pt-6 pb-16 bg-[#fff7f7] px-10 mt-10">
-            <h1 className="text-3xl  lg:text-6xl font-bold py-6 ">Arts and Craft Catagory</h1>
+            <h1 className="text-3xl  lg:text-6xl font-bold py-6 ">
+              
+              <span style={{ color: '#548c91', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={['Arts ', 'Craft']}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          />
+        </span>
+        Catagory
+
+
+            </h1>
+
         <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-4  ">
 
 
