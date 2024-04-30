@@ -57,7 +57,7 @@ const Register = () => {
             console.log(result.user)
             
             console.log(userInfo)
-            fetch('http://localhost:5018/user',{
+            fetch('https://monaliza-server.vercel.app/user',{
                             method:'POST',
                             headers:{
                                 'content-type':'application/json'

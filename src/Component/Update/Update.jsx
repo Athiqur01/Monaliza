@@ -36,7 +36,7 @@ const Update = () => {
         console.log(newItems)
 
 
-        fetch(`http://localhost:5018/items/${_id}`,{
+        fetch(`https://monaliza-server.vercel.app/items/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

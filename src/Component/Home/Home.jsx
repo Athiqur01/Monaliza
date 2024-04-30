@@ -5,6 +5,8 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Carosal from "../Carosal/Carosal";
 import CustomerReview from "../CustomerReview/CustomerReview";
+import FeaturedItems from "../FeaturedItems/FeaturedItems";
+
 
 
 
@@ -48,6 +50,9 @@ const Home = () => {
             <div>
                 
                 <CustomerReview></CustomerReview>
+            </div>
+            <div>
+                <FeaturedItems></FeaturedItems>
             </div>
             
         </div>

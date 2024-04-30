@@ -44,7 +44,7 @@ const MyArtAndCraftList = () => {
           }).then((result) => {
             
               
-            fetch(`http://localhost:5018/items/${id}`, {
+            fetch(`https://monaliza-server.vercel.app/items/${id}`, {
                 method:"DELETE"
             })
             .then(res=>res.json())

@@ -74,12 +74,9 @@ console.log(userImg,userNameFor)
       </Tooltip>   <button className='ml-4' onClick={handleLogout}>LogOut</button> </> : <><Link to="/logIn"><button>LogIn</button></Link> <Link to="/register"> <button className='ml-4'>Register</button></Link> </> 
     }
     
-    <button onClick={toggleTheam} className='btn btn-circle bg-slate-400'>Light</button>
+    <button onClick={toggleTheam} className='btn p-1 ml-2 bg-slate-400'>Toggle</button>
     <div className="form-control">
-  <label className="label cursor-pointer">
-    <span className="label-text">Remember me</span> 
-    <input type="checkbox" className="toggle" checked />
-  </label>
+  
 </div>
   </div>
 </div>

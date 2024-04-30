@@ -27,7 +27,7 @@ const AddCriftItems = () => {
                         console.log(newItems)
 
 
-                        fetch('http://localhost:5018/items',{
+                        fetch('https://monaliza-server.vercel.app/items',{
                             method:'POST',
                             headers:{
                                 'content-type':'application/json'

@@ -28,12 +28,12 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>,
-        loader:()=> fetch('http://localhost:5018/items') 
+        loader:()=> fetch('https://monaliza-server.vercel.app/items') 
       },
       {
         path:"/AllArtAndCriftItems",
         element:<AllAirtAndCriftItems></AllAirtAndCriftItems>,
-        loader:()=> fetch('http://localhost:5018/items') 
+        loader:()=> fetch('https://monaliza-server.vercel.app/items') 
       },
       {
         path:"/AddCriftItems",
@@ -44,12 +44,12 @@ const router = createBrowserRouter([
       {
         path:"/MyArtAndCraftList",
         element:<PrivateRoute><MyArtAndCraftList></MyArtAndCraftList></PrivateRoute>,
-        loader:()=> fetch('http://localhost:5018/items') 
+        loader:()=> fetch('https://monaliza-server.vercel.app/items') 
       },
       {
         path:"/viewDetail/:id",
         element:<ViewDetail></ViewDetail>,
-        loader:({params})=>fetch(`http://localhost:5018/items/${params.id}`)
+        loader:({params})=>fetch(`https://monaliza-server.vercel.app/items/${params.id}`)
       },
       {
         path:"/register",
@@ -58,12 +58,12 @@ const router = createBrowserRouter([
       {
         path:"/logIn",
         element:<LogIn></LogIn>,
-        loader:()=> fetch('http://localhost:5018/user') 
+        loader:()=> fetch('https://monaliza-server.vercel.app/user') 
       },
       {
         path:"/subcatagory",
         element:<Subcatagory></Subcatagory>,
-        loader:()=> fetch('http://localhost:5018/items') 
+        loader:()=> fetch('https://monaliza-server.vercel.app/items') 
       },
 
       {
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
           <Update></Update>
 
         </PrivateRoute> ,
-        loader:({params})=>fetch(`http://localhost:5018/items/${params.id}`)
+        loader:({params})=>fetch(`https://monaliza-server.vercel.app/items/${params.id}`)
       }
       
       
