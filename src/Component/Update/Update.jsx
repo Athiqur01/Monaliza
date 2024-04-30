@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Update = () => {
@@ -12,6 +13,55 @@ const Update = () => {
     setUpdateId(item._id)
     console.log(item)
     const {_id,itemName,imageUrl,subcatagory,itemDescription,price,rating,customization,processingTime,stockStatus,email,userName}=item
+
+
+
+    const handleUpdate=e=>{
+        e.preventDefault()
+        const common=e.target;
+        const itemName=common.name.value;
+        
+        const imageUrl=common.image.value;
+        const subcatagory=common.subcatagory.value;
+        const itemDescription=common.description.value;
+        const price=common.price.value;
+        const rating=common.rating.value;
+        const customization=common.customization.value;
+        const processingTime=common.processing.value;
+        const stockStatus=common.stock.value;
+        // const email=common.email.value;
+        const userName=common.user.value;
+
+        const newItems={itemName,imageUrl,subcatagory,itemDescription,price,rating,customization,processingTime,stockStatus,email,userName}
+        console.log(newItems)
+
+
+        fetch(`http://localhost:5018/items/${_id}`,{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newItems)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Successful!',
+                    text: 'Data has been Updated successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                  })
+                  
+            }
+        })
+
+     }
+
+
+
+
 
 
     return (
